@@ -1,3 +1,11 @@
+/*
+  File:	ServerSolution.java
+  Author:	N/A
+  Date:	2/20/17
+  
+  Description: Reads user input to create accounts.
+*/
+
 package banking.primitive.core;
 
 import java.util.ArrayList;
@@ -7,6 +15,12 @@ import java.util.HashMap;
 import java.io.*;
 
 import banking.primitive.core.Account.State;
+
+/**
+Class:	ServerSolution
+
+Description: Reads user input to create accounts, as well as save the list of accounts.
+*/
 
 class ServerSolution implements AccountServer {
 
