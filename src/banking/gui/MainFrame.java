@@ -141,7 +141,13 @@ class MainFrame extends JFrame {
 		}
 	}
 	
-	// Complete a handler for new account button
+	/**
+	  Method: SaveAccountsHandler
+	  Inputs: ActionEvent e
+	  Returns: showMessageDialog message
+
+	  Description: Complete a handler for save account button
+	*/
 	class SaveAccountsHandler implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			try {
