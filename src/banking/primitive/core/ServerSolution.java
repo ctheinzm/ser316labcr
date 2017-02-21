@@ -1,6 +1,6 @@
 /*
   File:	ServerSolution.java
-  Author:	N/A
+  Author:	N/A, edited by Connor Heinzmann
   Date:	2/20/17
   
   Description: Reads user input to create accounts.
@@ -21,13 +21,18 @@ Class:	ServerSolution
 
 Description: Reads user input to create accounts, as well as save the list of accounts.
 */
-
 class ServerSolution implements AccountServer {
 
 	static String fileName = "accounts.ser";
 
 	Map<String,Account> accountMap = null;
+	/**
+	  Method: ServerSolution
+	  Inputs: file to retrieve account list
+	  Returns: N/A
 
+	  Description: Reads list from previously saved file use to list accounts
+	*/
 	public ServerSolution() {
 		accountMap = new HashMap<String,Account>();
 		File file = new File(fileName);
@@ -58,7 +63,13 @@ class ServerSolution implements AccountServer {
 			}
 		}
 	}
-	
+	/**
+	  Method: newAccountFactory
+	  Inputs: type, name, balance
+	  Returns: Bool
+
+	  Description: Checks new account names versus current ones, will throw false if identical names.
+	*/
 	private boolean newAccountFactory(String type, String name, float balance)
 		throws IllegalArgumentException {
 		
@@ -81,7 +92,14 @@ class ServerSolution implements AccountServer {
 		}
 		return true;
 	}
+	
+	/**
+	  Method: newAccount
+	  Inputs: type, name, balance
+	  Returns: Bool
 
+	  Description: Throws if account starts with negative balance
+	*/
 	public boolean newAccount(String type, String name, float balance) 
 		throws IllegalArgumentException {
 		
@@ -90,6 +108,13 @@ class ServerSolution implements AccountServer {
 		return newAccountFactory(type, name, balance);
 	}
 	
+	/**
+	  Method: closeAccount
+	  Inputs: name
+	  Returns: Bool
+
+	  Description: Closes the inputed account
+	*/
 	public boolean closeAccount(String name) {
 		Account acc = accountMap.get(name);
 		if (acc == null) {
@@ -98,15 +123,36 @@ class ServerSolution implements AccountServer {
 		acc.setState(State.CLOSED);
 		return true;
 	}
+	
+	/**
+	  Method: getAccount
+	  Inputs: name
+	  Returns: name
 
+	  Description: returns account
+	*/
 	public Account getAccount(String name) {
 		return accountMap.get(name);
 	}
 
+	/**
+	  Method: getAllAccounts
+	  Inputs: -
+	  Returns: all accounts
+
+	  Description: lists all accounts
+	*/
 	public List<Account> getAllAccounts() {
 		return new ArrayList<Account>(accountMap.values());
 	}
 
+	/**
+	  Method: getActiveAccounts
+	  Inputs: - 
+	  Returns: account array
+
+	  Description: lists all accounts that are not closed (open / overdrawn)
+	*/
 	public List<Account> getActiveAccounts() {
 		List<Account> result = new ArrayList<Account>();
 
@@ -118,6 +164,13 @@ class ServerSolution implements AccountServer {
 		return result;
 	}
 	
+	/**
+	  Method: saveAccounts
+	  Inputs: account array
+	  Returns: - 
+
+	  Description: saves account list to a local file.
+	*/
 	public void saveAccounts() throws IOException {
 		ObjectOutputStream out = null; 
 		try {
