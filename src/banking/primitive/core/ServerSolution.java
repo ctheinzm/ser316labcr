@@ -110,9 +110,12 @@ class ServerSolution implements AccountServer {
 			out = new ObjectOutputStream(new FileOutputStream(fileName));
 
 			out.writeObject(Integer.valueOf(accountMap.size()));
-			for (int i=0; i < accountMap.size(); i++) {
-				out.writeObject(accountMap.get(i));
+			for(Map.Entry<String,Account> entry: accountMap.entrySet()){
+				out.writeObject(accountMap.get(entry.getKey()));
 			}
+//			for (int i=0; i < accountMap.size(); i++) {
+//				out.writeObject(accountMap.get(i));
+//			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new IOException("Could not write file:" + fileName);
