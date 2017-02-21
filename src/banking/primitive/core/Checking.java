@@ -16,18 +16,6 @@ Description: The class is a special account checking account and have multiple m
 public class Checking extends Account {
 
 	private static final long serialVersionUID = 11L;
-	private int _numWithdraws = 0;
-
-	/**
-	  Method: Checking(String name) 
-	  Inputs: name
-	  Returns: 
-	
-	  Description: The method construct a new account with name.
-	*/
-	private Checking(String name) {
-		super(name);
-	}
 
 	/**
 	  Method: Checking(String name) 
@@ -40,6 +28,14 @@ public class Checking extends Account {
 		super(name, balance);
 	}
 
+	/**
+	  Method: getType() 
+	  Inputs: 
+	  Returns: String "checking"
+	
+	  Description: The method return a string "Checking".
+	*/
+	public String getType() { return "Checking"; }
 	
 	/**
 	  Method: createChecking(String name) 
@@ -98,15 +94,6 @@ public class Checking extends Account {
 		}
 		return false;
 	}
-
-	/**
-	  Method: getType() 
-	  Inputs: 
-	  Returns: String "checking"
-	
-	  Description: The method return a string "Checking".
-	*/
-	public String getType() { return "Checking"; }
 	
 	
 	/**
@@ -119,4 +106,17 @@ public class Checking extends Account {
 	public String toString() {
 		return "Checking: " + getName() + ": " + getBalance();
 	}
+
+	/**
+	  Method: Checking(String name) 
+	  Inputs: name
+	  Returns: 
+	
+	  Description: The method construct a new account with name.
+	*/
+	private Checking(String name) {
+		super(name);
+	}
+	
+	private int _numWithdraws = 0;
 }
