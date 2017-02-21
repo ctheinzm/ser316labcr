@@ -1,5 +1,19 @@
-package banking.primitive.core;
+/*
+  File:	Account.java
+  Author: N/A
+  Date:	2/20/17
+  
+  Description: Initializes the balance, name, and states of accounts.
+*/
 
+
+
+package banking.primitive.core;
+/**
+  Class: Account
+
+  Description: Initializes abstract methods
+*/
 public abstract class Account implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
 
