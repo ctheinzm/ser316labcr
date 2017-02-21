@@ -1,24 +1,38 @@
+/*
+  File:	Main.java
+  Author: Professor Mehlhase, Fixed by Haocheng Zhang
+  Date:	2/20/17
+  
+  Description: The class is the main class in the program.
+*/
 package banking.gui;
 
 import javax.swing.JFrame;
 
 /**
- * main method for running the program.
- * @author kevinagary
- *
- */
+Class:	Main
+
+Description: main method for running the program.
+*/
 final class Main {
+
 	/**
-	 * Private constructor to address STYLE issue.
-	 */
+	  Method: Main() 
+	  Inputs: 
+	  Returns: 
+	
+	  Description: The main constructor.
+	*/
 	private Main() {
 	}
 	
 	/**
-	 * All methods should have a Javadoc according to STYLE.
-	 * @param args command-line arguments
-	 * @throws Exception as per typical main specifications
-	 */
+	  Method: main(final String[] args) 
+	  Inputs: args command-line arguments
+	  Returns: 
+	
+	  Description: main method for running the program.
+	*/
 	public static void main(final String[] args) throws Exception {
 
 		if (args.length != 1) {
@@ -31,4 +45,5 @@ final class Main {
 		frame.setVisible(true);
 
 	}
+	
 }
