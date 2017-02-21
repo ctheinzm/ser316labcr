@@ -1,8 +1,21 @@
+/*
+  File:	AccountServer.java
+  Author: N/A
+  Date:	2/20/17
+  
+  Description: Interface of account methods, including creation, closing, listing, and saving.
+*/
+
 package banking.primitive.core;
 
 import java.io.IOException;
 import java.util.List;
 
+/**
+Class:	AccountServer
+
+Description: Interface of account methods
+*/
 public interface AccountServer {
 
 	/** 
