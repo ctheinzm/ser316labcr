@@ -172,7 +172,15 @@ class MainFrame extends JFrame {
 			}		
 		}
 	}
-	// Complete a handler for deposit button
+	
+	/**
+	  Method: WithdrawHandler
+	  Inputs: ActionEvent e
+	  Returns: showMessageDialog messages
+
+	  Description: Complete a handler for withdraw button
+	*/
+
 	class WithdrawHandler implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			String name = nameField.getText();
